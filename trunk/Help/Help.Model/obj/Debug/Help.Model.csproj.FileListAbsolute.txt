@@ -1,0 +1,11 @@
+D:\Project\Help\HelpSource\Help\Help.Model\bin\Debug\Help.Model.dll.config
+D:\Project\Help\HelpSource\Help\Help.Model\bin\Debug\Help.Model.dll
+D:\Project\Help\HelpSource\Help\Help.Model\bin\Debug\Help.Model.pdb
+D:\Project\Help\HelpSource\Help\Help.Model\bin\Debug\EntityFramework.dll
+D:\Project\Help\HelpSource\Help\Help.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Help\HelpSource\Help\Help.Model\bin\Debug\EntityFramework.xml
+D:\Project\Help\HelpSource\Help\Help.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.Migrations.CreateLoaiCoSoKhamBenhTable.resources
+D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.csproj.GenerateResource.Cache
+D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.dll
+D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.pdb

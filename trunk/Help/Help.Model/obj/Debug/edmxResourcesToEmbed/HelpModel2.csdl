@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BacSi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tuoi" Type="Int32" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="BangCapCaoNhat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TruongTotNghiep" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NamTotNghiep" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NguoiChinhSua" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ChiTietBacSis" Relationship="Self.FK_ChiTietBacSi_BacSi" FromRole="BacSi" ToRole="ChiTietBacSi" />
+    <NavigationProperty Name="LichKhamBenhs" Relationship="Self.FK_LichKhamBenh_BacSi" FromRole="BacSi" ToRole="LichKhamBenh" />
+  </EntityType>
+  <EntityType Name="Benh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenBenh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NguoiChinhSua" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="HoSoBenhAns" Relationship="Self.FK_HoSoBenhAn_Benh" FromRole="Benh" ToRole="HoSoBenhAn" />
+  </EntityType>
+  <EntityType Name="ChiTietBacSi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BacSiId" Type="Int32" />
+    <Property Name="ChuyenKhoaId" Type="Int32" />
+    <Property Name="NoiCongTac" Type="Int32" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NguoiChinhSua" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BacSi" Relationship="Self.FK_ChiTietBacSi_BacSi" FromRole="ChiTietBacSi" ToRole="BacSi" />
+  </EntityType>
+  <EntityType Name="ChuyenKhoa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenChuyenKhoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NguoiChinhSua" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DichVuKhams" Relationship="Self.FK_DichVuKham_ChuyenKhoa" FromRole="ChuyenKhoa" ToRole="DichVuKham" />
+  </EntityType>
+  <EntityType Name="CoSoKhamBenh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenCS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoaiCoSo" Type="Int32" />
+    <Property Name="LoaiDieuTri" Type="Int32" />
+    <Property Name="ThongTinChung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ChuThich" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NguoiChinhSua" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DichVuKhams" Relationship="Self.FK_DichVuKham_CoSoKhamBenh" FromRole="CoSoKhamBenh" ToRole="DichVuKham" />
+    <NavigationProperty Name="LichKhamBenhs" Relationship="Self.FK_LichKhamBenh_CoSoKhamBenh" FromRole="CoSoKhamBenh" ToRole="LichKhamBenh" />
+    <NavigationProperty Name="LoaiCoSoKhamBenh" Relationship="HelpModel2.FK_CoSoKhamBenh_LoaiCoSoKhamBenh" FromRole="CoSoKhamBenh" ToRole="LoaiCoSoKhamBenh" />
+    <NavigationProperty Name="LoaiDieuTri1" Relationship="HelpModel2.FK_CoSoKhamBenh_LoaiDieuTri" FromRole="CoSoKhamBenh" ToRole="LoaiDieuTri" />
+  </EntityType>
+  <EntityType Name="DichVuKham">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoSoId" Type="Int32" />
+    <Property Name="ChuyenKhoaId" Type="Int32" />
+    <Property Name="TenDichVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KhungGio" Type="Int32" />
+    <Property Name="SoLuongPhucVu" Type="Int32" />
+    <Property Name="GiaCa" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NguoiChinhSua" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ChuyenKhoa" Relationship="Self.FK_DichVuKham_ChuyenKhoa" FromRole="DichVuKham" ToRole="ChuyenKhoa" />
+    <NavigationProperty Name="CoSoKhamBenh" Relationship="Self.FK_DichVuKham_CoSoKhamBenh" FromRole="DichVuKham" ToRole="CoSoKhamBenh" />
+    <NavigationProperty Name="LichKhamBenhs" Relationship="Self.FK_LichKhamBenh_DichVuKham" FromRole="DichVuKham" ToRole="LichKhamBenh" />
+  </EntityType>
+  <EntityType Name="HoSoBenhAn">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="CoSoKhamBenhId" Type="Int32" />
+    <Property Name="BacSiId" Type="Int32" />
+    <Property Name="LoaiBenhId" Type="Int32" />
+    <Property Name="KetQua" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NguoiTao" Type="Int32" />
+    <Property Name="NguoiChinhSua" Type="Int32" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Benh" Relationship="Self.FK_HoSoBenhAn_Benh" FromRole="HoSoBenhAn" ToRole="Benh" />
+    <NavigationProperty Name="User" Relationship="Self.FK_HoSoBenhAn_User" FromRole="HoSoBenhAn" ToRole="User" />
+  </EntityType>
+  <EntityType Name="KhungGio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KhungGio1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="MoTa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="LichKhamBenhs" Relationship="Self.FK_LichKhamBenh_KhungGio1" FromRole="KhungGio" ToRole="LichKhamBenh" />
+  </EntityType>
+  <EntityType Name="LichKhamBenh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CoSoKhamBenhId" Type="Int32" />
+    <Property Name="DichVuKhamId" Type="Int32" />
+    <Property Name="KhungGioId" Type="Int32" />
+    <Property Name="SoLuongDangKi" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="BacSiId" Type="Int32" />
+    <Property Name="NgayDangKi" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BacSi" Relationship="Self.FK_LichKhamBenh_BacSi" FromRole="LichKhamBenh" ToRole="BacSi" />
+    <NavigationProperty Name="CoSoKhamBenh" Relationship="Self.FK_LichKhamBenh_CoSoKhamBenh" FromRole="LichKhamBenh" ToRole="CoSoKhamBenh" />
+    <NavigationProperty Name="DichVuKham" Relationship="Self.FK_LichKhamBenh_DichVuKham" FromRole="LichKhamBenh" ToRole="DichVuKham" />
+    <NavigationProperty Name="KhungGio" Relationship="Self.FK_LichKhamBenh_KhungGio1" FromRole="LichKhamBenh" ToRole="KhungGio" />
+    <NavigationProperty Name="User" Relationship="Self.FK_LichKhamBenh_User" FromRole="LichKhamBenh" ToRole="User" />
+  </EntityType>
+  <EntityType Name="LoaiCoSoKhamBenh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Byte" />
+    <NavigationProperty Name="CoSoKhamBenhs" Relationship="HelpModel2.FK_CoSoKhamBenh_LoaiCoSoKhamBenh" FromRole="LoaiCoSoKhamBenh" ToRole="CoSoKhamBenh" />
+  </EntityType>
+  <EntityType Name="LoaiDieuTri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Byte" />
+    <NavigationProperty Name="CoSoKhamBenhs" Relationship="HelpModel2.FK_CoSoKhamBenh_LoaiDieuTri" FromRole="LoaiDieuTri" ToRole="CoSoKhamBenh" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoDienThoai" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NamSinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ChieuCao" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="CanNang" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="UserGroup" Type="Int32" />
+    <Property Name="Status" Type="Byte" />
+    <NavigationProperty Name="HoSoBenhAns" Relationship="Self.FK_HoSoBenhAn_User" FromRole="User" ToRole="HoSoBenhAn" />
+    <NavigationProperty Name="LichKhamBenhs" Relationship="Self.FK_LichKhamBenh_User" FromRole="User" ToRole="LichKhamBenh" />
+    <NavigationProperty Name="UserGroup1" Relationship="Self.FK_User_UserGroup" FromRole="User" ToRole="UserGroup" />
+  </EntityType>
+  <EntityType Name="UserAdmin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserGroup" Type="Int32" Nullable="false" />
+    <Property Name="NgayTao" Type="DateTime" Precision="3" />
+    <Property Name="NgayChinhSua" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Byte" />
+    <NavigationProperty Name="UserGroup1" Relationship="Self.FK_UserAdmin_UserGroup" FromRole="UserAdmin" ToRole="UserGroup" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_UserGroup" FromRole="UserGroup" ToRole="User" />
+    <NavigationProperty Name="UserAdmins" Relationship="Self.FK_UserAdmin_UserGroup" FromRole="UserGroup" ToRole="UserAdmin" />
+  </EntityType>
+  <Association Name="FK_ChiTietBacSi_BacSi">
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="0..1" />
+    <End Role="ChiTietBacSi" Type="Self.ChiTietBacSi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BacSi">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChiTietBacSi">
+        <PropertyRef Name="BacSiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_BacSi">
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BacSi">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="BacSiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoSoBenhAn_Benh">
+    <End Role="Benh" Type="Self.Benh" Multiplicity="0..1" />
+    <End Role="HoSoBenhAn" Type="Self.HoSoBenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Benh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HoSoBenhAn">
+        <PropertyRef Name="LoaiBenhId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DichVuKham_ChuyenKhoa">
+    <End Role="ChuyenKhoa" Type="Self.ChuyenKhoa" Multiplicity="0..1" />
+    <End Role="DichVuKham" Type="Self.DichVuKham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuyenKhoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DichVuKham">
+        <PropertyRef Name="ChuyenKhoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DichVuKham_CoSoKhamBenh">
+    <End Role="CoSoKhamBenh" Type="Self.CoSoKhamBenh" Multiplicity="0..1" />
+    <End Role="DichVuKham" Type="Self.DichVuKham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoSoKhamBenh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DichVuKham">
+        <PropertyRef Name="CoSoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_CoSoKhamBenh">
+    <End Role="CoSoKhamBenh" Type="Self.CoSoKhamBenh" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoSoKhamBenh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="CoSoKhamBenhId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_DichVuKham">
+    <End Role="DichVuKham" Type="Self.DichVuKham" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVuKham">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="DichVuKhamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoSoBenhAn_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="HoSoBenhAn" Type="Self.HoSoBenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HoSoBenhAn">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_KhungGio1">
+    <End Role="KhungGio" Type="Self.KhungGio" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhungGio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="KhungGioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserGroup">
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAdmin_UserGroup">
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="1" />
+    <End Role="UserAdmin" Type="Self.UserAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserAdmin">
+        <PropertyRef Name="UserGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HelpEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="BacSis" EntityType="Self.BacSi" />
+    <EntitySet Name="Benhs" EntityType="Self.Benh" />
+    <EntitySet Name="ChiTietBacSis" EntityType="Self.ChiTietBacSi" />
+    <EntitySet Name="ChuyenKhoas" EntityType="Self.ChuyenKhoa" />
+    <EntitySet Name="CoSoKhamBenhs" EntityType="Self.CoSoKhamBenh" />
+    <EntitySet Name="DichVuKhams" EntityType="Self.DichVuKham" />
+    <EntitySet Name="HoSoBenhAns" EntityType="Self.HoSoBenhAn" />
+    <EntitySet Name="KhungGios" EntityType="Self.KhungGio" />
+    <EntitySet Name="LichKhamBenhs" EntityType="Self.LichKhamBenh" />
+    <EntitySet Name="LoaiCoSoKhamBenhs" EntityType="Self.LoaiCoSoKhamBenh" />
+    <EntitySet Name="LoaiDieuTris" EntityType="Self.LoaiDieuTri" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserAdmins" EntityType="Self.UserAdmin" />
+    <EntitySet Name="UserGroups" EntityType="Self.UserGroup" />
+    <AssociationSet Name="FK_ChiTietBacSi_BacSi" Association="Self.FK_ChiTietBacSi_BacSi">
+      <End Role="BacSi" EntitySet="BacSis" />
+      <End Role="ChiTietBacSi" EntitySet="ChiTietBacSis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_BacSi" Association="Self.FK_LichKhamBenh_BacSi">
+      <End Role="BacSi" EntitySet="BacSis" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoSoBenhAn_Benh" Association="Self.FK_HoSoBenhAn_Benh">
+      <End Role="Benh" EntitySet="Benhs" />
+      <End Role="HoSoBenhAn" EntitySet="HoSoBenhAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DichVuKham_ChuyenKhoa" Association="Self.FK_DichVuKham_ChuyenKhoa">
+      <End Role="ChuyenKhoa" EntitySet="ChuyenKhoas" />
+      <End Role="DichVuKham" EntitySet="DichVuKhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DichVuKham_CoSoKhamBenh" Association="Self.FK_DichVuKham_CoSoKhamBenh">
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenhs" />
+      <End Role="DichVuKham" EntitySet="DichVuKhams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_CoSoKhamBenh" Association="Self.FK_LichKhamBenh_CoSoKhamBenh">
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenhs" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_DichVuKham" Association="Self.FK_LichKhamBenh_DichVuKham">
+      <End Role="DichVuKham" EntitySet="DichVuKhams" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoSoBenhAn_User" Association="Self.FK_HoSoBenhAn_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="HoSoBenhAn" EntitySet="HoSoBenhAns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_KhungGio1" Association="Self.FK_LichKhamBenh_KhungGio1">
+      <End Role="KhungGio" EntitySet="KhungGios" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_User" Association="Self.FK_LichKhamBenh_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserGroup" Association="Self.FK_User_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroups" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAdmin_UserGroup" Association="Self.FK_UserAdmin_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroups" />
+      <End Role="UserAdmin" EntitySet="UserAdmins" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(HelpModel2.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(HelpModel2.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK_CoSoKhamBenh_LoaiCoSoKhamBenh" Association="HelpModel2.FK_CoSoKhamBenh_LoaiCoSoKhamBenh">
+      <End Role="LoaiCoSoKhamBenh" EntitySet="LoaiCoSoKhamBenhs" />
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenhs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CoSoKhamBenh_LoaiDieuTri" Association="HelpModel2.FK_CoSoKhamBenh_LoaiDieuTri">
+      <End Role="LoaiDieuTri" EntitySet="LoaiDieuTris" />
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenhs" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <Association Name="FK_CoSoKhamBenh_LoaiCoSoKhamBenh">
+    <End Type="HelpModel2.LoaiCoSoKhamBenh" Role="LoaiCoSoKhamBenh" Multiplicity="0..1" />
+    <End Type="HelpModel2.CoSoKhamBenh" Role="CoSoKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiCoSoKhamBenh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoSoKhamBenh">
+        <PropertyRef Name="LoaiCoSo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CoSoKhamBenh_LoaiDieuTri">
+    <End Type="HelpModel2.LoaiDieuTri" Role="LoaiDieuTri" Multiplicity="0..1" />
+    <End Type="HelpModel2.CoSoKhamBenh" Role="CoSoKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiDieuTri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoSoKhamBenh">
+        <PropertyRef Name="LoaiDieuTri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,86 @@
+﻿@model Help.Model.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ten)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ten)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoDienThoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoDienThoai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DiaChi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DiaChi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamSinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamSinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GioiTinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GioiTinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChieuCao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChieuCao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CanNang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CanNang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserGroup)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserGroup)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
