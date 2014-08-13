@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BacSi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tuoi" Type="int" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+    <Property Name="SoDienThoai" Type="char" MaxLength="15" />
+    <Property Name="BangCapCaoNhat" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruongTotNghiep" Type="nchar" MaxLength="10" />
+    <Property Name="NamTotNghiep" Type="char" MaxLength="10" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Benh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBenh" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ChiTietBacSi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BacSiId" Type="int" />
+    <Property Name="ChuyenKhoaId" Type="int" />
+    <Property Name="NoiCongTac" Type="int" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ChuyenKhoa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenChuyenKhoa" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CoSoKhamBenh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenCS" Type="nvarchar" MaxLength="255" />
+    <Property Name="DiaChi" Type="nvarchar(max)" />
+    <Property Name="LoaiCoSo" Type="int" />
+    <Property Name="LoaiDieuTri" Type="int" />
+    <Property Name="ThongTinChung" Type="nvarchar(max)" />
+    <Property Name="ChuThich" Type="nvarchar" MaxLength="50" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+    <Property Name="ContentSearch" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DichVuKham">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoSoId" Type="int" />
+    <Property Name="ChuyenKhoaId" Type="int" />
+    <Property Name="TenDichVu" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="KhungGio" Type="int" />
+    <Property Name="SoLuongPhucVu" Type="int" />
+    <Property Name="GiaCa" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HoSoBenhAn">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="CoSoKhamBenhId" Type="int" />
+    <Property Name="BacSiId" Type="int" />
+    <Property Name="LoaiBenhId" Type="int" />
+    <Property Name="KetQua" Type="nvarchar" MaxLength="255" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nchar" MaxLength="10" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="500" />
+    <Property Name="NhomDoiTuong" Type="int" />
+    <Property Name="DoiTuongId" Type="int" />
+    <Property Name="NguoiTao" Type="int" />
+    <Property Name="NguoiChinhSua" Type="int" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="RoleImg" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="KhungGio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KhungGio" Type="char" MaxLength="20" />
+    <Property Name="MoTa" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="LichKhamBenh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CoSoKhamBenhId" Type="int" />
+    <Property Name="DichVuKhamId" Type="int" />
+    <Property Name="KhungGioId" Type="int" />
+    <Property Name="SoLuongDangKi" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="BacSiId" Type="int" />
+    <Property Name="NgayDangKi" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+  </EntityType>
+  <EntityType Name="LoaiCoSoKhamBenh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="LoaiDieuTri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoDienThoai" Type="char" MaxLength="15" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
+    <Property Name="NamSinh" Type="date" />
+    <Property Name="GioiTinh" Type="nchar" MaxLength="10" />
+    <Property Name="ChieuCao" Type="char" MaxLength="10" />
+    <Property Name="CanNang" Type="char" MaxLength="10" />
+    <Property Name="UserGroup" Type="int" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="UserAdmin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserGroup" Type="int" Nullable="false" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="NgayChinhSua" Type="datetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="UserGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_ChiTietBacSi_BacSi">
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="0..1" />
+    <End Role="ChiTietBacSi" Type="Self.ChiTietBacSi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BacSi">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChiTietBacSi">
+        <PropertyRef Name="BacSiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CoSoKhamBenh_LoaiCoSoKhamBenh">
+    <End Role="LoaiCoSoKhamBenh" Type="Self.LoaiCoSoKhamBenh" Multiplicity="0..1" />
+    <End Role="CoSoKhamBenh" Type="Self.CoSoKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiCoSoKhamBenh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoSoKhamBenh">
+        <PropertyRef Name="LoaiCoSo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CoSoKhamBenh_LoaiDieuTri">
+    <End Role="LoaiDieuTri" Type="Self.LoaiDieuTri" Multiplicity="0..1" />
+    <End Role="CoSoKhamBenh" Type="Self.CoSoKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiDieuTri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CoSoKhamBenh">
+        <PropertyRef Name="LoaiDieuTri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DichVuKham_ChuyenKhoa">
+    <End Role="ChuyenKhoa" Type="Self.ChuyenKhoa" Multiplicity="0..1" />
+    <End Role="DichVuKham" Type="Self.DichVuKham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuyenKhoa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DichVuKham">
+        <PropertyRef Name="ChuyenKhoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DichVuKham_CoSoKhamBenh">
+    <End Role="CoSoKhamBenh" Type="Self.CoSoKhamBenh" Multiplicity="0..1" />
+    <End Role="DichVuKham" Type="Self.DichVuKham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoSoKhamBenh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DichVuKham">
+        <PropertyRef Name="CoSoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoSoBenhAn_Benh">
+    <End Role="Benh" Type="Self.Benh" Multiplicity="0..1" />
+    <End Role="HoSoBenhAn" Type="Self.HoSoBenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Benh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HoSoBenhAn">
+        <PropertyRef Name="LoaiBenhId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HoSoBenhAn_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="HoSoBenhAn" Type="Self.HoSoBenhAn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HoSoBenhAn">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Images_CoSoKhamBenh">
+    <End Role="CoSoKhamBenh" Type="Self.CoSoKhamBenh" Multiplicity="0..1" />
+    <End Role="Images" Type="Self.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoSoKhamBenh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Images">
+        <PropertyRef Name="DoiTuongId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_BacSi">
+    <End Role="BacSi" Type="Self.BacSi" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BacSi">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="BacSiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_CoSoKhamBenh">
+    <End Role="CoSoKhamBenh" Type="Self.CoSoKhamBenh" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CoSoKhamBenh">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="CoSoKhamBenhId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_DichVuKham">
+    <End Role="DichVuKham" Type="Self.DichVuKham" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DichVuKham">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="DichVuKhamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_KhungGio1">
+    <End Role="KhungGio" Type="Self.KhungGio" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhungGio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="KhungGioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LichKhamBenh_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="LichKhamBenh" Type="Self.LichKhamBenh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LichKhamBenh">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserGroup">
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAdmin_UserGroup">
+    <End Role="UserGroup" Type="Self.UserGroup" Multiplicity="1" />
+    <End Role="UserAdmin" Type="Self.UserAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserAdmin">
+        <PropertyRef Name="UserGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HelpContextStoreContainer">
+    <EntitySet Name="BacSi" EntityType="Self.BacSi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Benh" EntityType="Self.Benh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietBacSi" EntityType="Self.ChiTietBacSi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChuyenKhoa" EntityType="Self.ChuyenKhoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoSoKhamBenh" EntityType="Self.CoSoKhamBenh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DichVuKham" EntityType="Self.DichVuKham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoSoBenhAn" EntityType="Self.HoSoBenhAn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Images" EntityType="Self.Images" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhungGio" EntityType="Self.KhungGio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LichKhamBenh" EntityType="Self.LichKhamBenh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiCoSoKhamBenh" EntityType="Self.LoaiCoSoKhamBenh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiDieuTri" EntityType="Self.LoaiDieuTri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAdmin" EntityType="Self.UserAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserGroup" EntityType="Self.UserGroup" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ChiTietBacSi_BacSi" Association="Self.FK_ChiTietBacSi_BacSi">
+      <End Role="BacSi" EntitySet="BacSi" />
+      <End Role="ChiTietBacSi" EntitySet="ChiTietBacSi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CoSoKhamBenh_LoaiCoSoKhamBenh" Association="Self.FK_CoSoKhamBenh_LoaiCoSoKhamBenh">
+      <End Role="LoaiCoSoKhamBenh" EntitySet="LoaiCoSoKhamBenh" />
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CoSoKhamBenh_LoaiDieuTri" Association="Self.FK_CoSoKhamBenh_LoaiDieuTri">
+      <End Role="LoaiDieuTri" EntitySet="LoaiDieuTri" />
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DichVuKham_ChuyenKhoa" Association="Self.FK_DichVuKham_ChuyenKhoa">
+      <End Role="ChuyenKhoa" EntitySet="ChuyenKhoa" />
+      <End Role="DichVuKham" EntitySet="DichVuKham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DichVuKham_CoSoKhamBenh" Association="Self.FK_DichVuKham_CoSoKhamBenh">
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenh" />
+      <End Role="DichVuKham" EntitySet="DichVuKham" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoSoBenhAn_Benh" Association="Self.FK_HoSoBenhAn_Benh">
+      <End Role="Benh" EntitySet="Benh" />
+      <End Role="HoSoBenhAn" EntitySet="HoSoBenhAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HoSoBenhAn_User" Association="Self.FK_HoSoBenhAn_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="HoSoBenhAn" EntitySet="HoSoBenhAn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Images_CoSoKhamBenh" Association="Self.FK_Images_CoSoKhamBenh">
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenh" />
+      <End Role="Images" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_BacSi" Association="Self.FK_LichKhamBenh_BacSi">
+      <End Role="BacSi" EntitySet="BacSi" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_CoSoKhamBenh" Association="Self.FK_LichKhamBenh_CoSoKhamBenh">
+      <End Role="CoSoKhamBenh" EntitySet="CoSoKhamBenh" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_DichVuKham" Association="Self.FK_LichKhamBenh_DichVuKham">
+      <End Role="DichVuKham" EntitySet="DichVuKham" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_KhungGio1" Association="Self.FK_LichKhamBenh_KhungGio1">
+      <End Role="KhungGio" EntitySet="KhungGio" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LichKhamBenh_User" Association="Self.FK_LichKhamBenh_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="LichKhamBenh" EntitySet="LichKhamBenh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserGroup" Association="Self.FK_User_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroup" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAdmin_UserGroup" Association="Self.FK_UserAdmin_UserGroup">
+      <End Role="UserGroup" EntitySet="UserGroup" />
+      <End Role="UserAdmin" EntitySet="UserAdmin" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

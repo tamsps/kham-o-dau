@@ -1,0 +1,6 @@
+D:\Project\Help\HelpSource\Help\Help.Ultilities\bin\Debug\Help.Ultilities.dll
+D:\Project\Help\HelpSource\Help\Help.Ultilities\bin\Debug\Help.Ultilities.pdb
+D:\Project\Help\HelpSource\Help\Help.Ultilities\obj\Debug\Help.Ultilities.dll
+D:\Project\Help\HelpSource\Help\Help.Ultilities\obj\Debug\Help.Ultilities.pdb
+D:\Project\Help\HelpSource\Help\Help.Ultilities\obj\Debug\Help.Ultilities.csprojResolveAssemblyReference.cache
+D:\Project\Help\HelpSource\Help\Help.Ultilities\bin\Debug\log4net.dll

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ef6702eb6d4948149a6ed0ccac5bf9c4" Name="Diagram1">
+        <EntityTypeShape EntityType="HelpModel2.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.BacSi" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.Benh" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.ChiTietBacSi" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.ChuyenKhoa" Width="1.5" PointX="3.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.CoSoKhamBenh" Width="1.5" PointX="6" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.DichVuKham" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.HoSoBenhAn" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.KhungGio" Width="1.5" PointX="6" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.LichKhamBenh" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.LoaiCoSoKhamBenh" Width="1.5" PointX="10.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.LoaiDieuTri" Width="1.5" PointX="10.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.User" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.UserAdmin" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HelpModel2.UserGroup" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="HelpModel2.FK_ChiTietBacSi_BacSi" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_LichKhamBenh_BacSi" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_HoSoBenhAn_Benh" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_DichVuKham_ChuyenKhoa" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_DichVuKham_CoSoKhamBenh" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_LichKhamBenh_CoSoKhamBenh" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_LichKhamBenh_DichVuKham" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_HoSoBenhAn_User" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_LichKhamBenh_KhungGio1" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_LichKhamBenh_User" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_User_UserGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_UserAdmin_UserGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="HelpModel2.FK_CoSoKhamBenh_LoaiCoSoKhamBenh" />
+        <AssociationConnector Association="HelpModel2.FK_CoSoKhamBenh_LoaiDieuTri" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

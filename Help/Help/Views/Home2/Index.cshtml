@@ -1,0 +1,203 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = string.Format("{0}", "~/Views/Shared/_Layout.cshtml");
+    <link href="~/Content/TypeHeader/TypeHeader.css" rel="stylesheet" />
+    <script src="~/Scripts/typeheader/handlebars.js"></script>
+    <script src="~/Scripts/typeheader/typeahead.js"></script>
+    <script src="~/Scripts/typeheader/examples.js"></script>
+}
+
+@section header{
+ <div class="shell">
+                <div class="header-top">
+                    <h1 id="logo"><a href="#">Khám ở đâu?</a></h1>
+                    <nav id="navigation">
+                        <a href="#" class="nav-btn">Trang chủ<span></span></a>
+                        <ul>
+                            <li class="active home"><a href="#">Trang Chủ</a></li>
+                            <li><a href="#">Dịch vụ</a></li>
+                            <li><a href="#">Phòng khám</a></li>
+                            <li><a href="#">Hỏi đáp-Tư vấn</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                    <div class="cl">&nbsp;</div>
+                </div>
+                <div class="slider">
+                    <div id="bg"></div>
+                    <div id="carousel">
+                        <div>
+                            <h5>Dịch vụ</h5>
+                             <h3>Tư Vấn Phòng Khám</h3> 
+                            <p>Khi bạn có nhu cầu khám chữa bệnh về một loại bệnh bất kì. Hãy gọi chúng tôi và phần còn lại để chúng tôi lo. Bạn chỉ chờ đợi thông báo lịch trình khám phù hợp nhất với bạn.</p>
+                            <a href="#" class="green-btn">Chi tiết</a>
+                            <img class="img-front" src="~/Content/Digy/images/front-img1.png" alt="dot1"  />
+                            <img class="img-mid" src="~/Content/Digy/images/mid-img1.png" alt="dot2"  />
+                            
+                        </div>
+
+                        <div>
+                            <h5>Đặt lịch khám</h5>
+                            <h3>Đăng Kí</h3>
+                            <p>Sau khi đã chọn được khung giờ phù hợp với bạn. Hãy tiến hành đặt chỗ ngay kẻo sẽ có người đặt trước.</p>
+                            <a href="#" class="green-btn">Chi tiết</a>
+                            <img class="img-front" src="~/Content/Digy/images/front-img2.png" alt="dot1"  />
+                            <img class="img-mid" src="~/Content/Digy/images/mid-img2.png" alt="dot2" />
+                            
+                        </div>
+
+                        <div>
+                            <h5>Danh sách phòng khám</h5>
+                            <h3>Phòng Khám</h3>
+                            <p>Một hệ thống những bệnh viện, phòng khám, trung tâm có liên kết với Khám ở đâu sẽ cung cấp cho bạn sự lựa chọn phong phú nhất.</p>
+                            <a href="#" class="green-btn">Chi tiết</a>
+                            <img class="img-front" src="~/Content/Digy/images/front-img3.png" alt="dot1"  />
+                            <img class="img-mid" src="~/Content/Digy/images/mid-img3.png" alt="dot2"  />
+                        </div>
+
+                        <div>
+                            <h5>Thắc mắc biết hỏi ai</h5>
+                            <h3>Hỏi Đáp</h3>
+                            <p>Bạn có những thắc mắc mà không biết hỏi ai hoặc ngại ngùng khi hỏi. Hãy để lại câu hỏi trên web site (bạn có thể giấu tên) và bác sĩ đúng chuyên môn sẽ trả lời cho bạn.</p>
+                            <a href="#" class="green-btn">Chi tiết</a>
+                            <img class="img-front" src="~/Content/Digy/images/front-img4.png" alt="dot1"  />
+                            <img class="img-mid" src="~/Content/Digy/images/mid-img4.png" alt="dot2"  />
+                        </div>
+
+                    </div>
+                    <div class="pagination"></div>
+                    <a id="prev" href="#"></a>
+                    <a id="next" href="#"></a>
+                </div>
+            </div>
+}
+
+
+    <section class="cols">
+
+					<div class="col">
+						<img src="~/Content/Digy/images/col-img1.png" alt="" />
+						<div class="col-cnt">
+							<h2 style="color: black">TÌM KIẾM</h2>
+							<p style="color: black">Tìm kiếm cơ sở y tế với khả năng khám chữa bệnh phù hợp với nhu cầu hiện tại của bạn</p>
+							@*<a href="#" class="more">view more</a>*@
+						</div>
+					</div>
+					<div class="col">
+						<img src="~/Content/Digy/images/col-img2.png" alt="" />
+						<div class="col-cnt">
+							<h2>ĐẶT LỊCH KHÁM</h2>
+							<p>Chọn một khung giờ phù hợp với bạn nhất và đặt lịch khám.</p>
+						@*	<a href="#" class="more">view more</a>*@
+						</div>
+					</div>
+					<div class="col">
+						<img src="~/Content/Digy/images/col-img3.png" alt="" />
+						<div class="col-cnt">
+							<h2  style="color: #828282">XÁC NHẬN</h2>
+							<p>Chúng tôi cần bạn xác nhận qua email hoặc tin nhắn việc đặt lịch khám bệnh của bạn</p>
+							@*<a href="#" class="more">view more</a>*@
+						</div>
+					</div>
+					<div class="cl">&nbsp;</div>
+
+				</section>
+<!-- end of cols -->
+
+				<section class="post">
+                    <div id="custom-templates" style='margin-bottom:15px;'>
+                        <input class="typeahead" type="text" placeholder="Loại bênh, tên bệnh viện, địa chỉ ...">
+                        <a href="javascript:void(0)" id="btn-advsearch">Tìm kiếm nâng cao</a>
+                    </div>
+                    <div style="display: none; margin-top:20px;" id="advanceSearch" >
+                        <div class="adv-title">
+                            <div style="width: 100px; float: left;">Tỉnh/Thành phố</div>
+                            <select id="provinceList" class="adv-dropdownlist">
+                                <option value="0" selected="selected">-- Chọn --</option>                                
+                                <option value="0">TP-Hồ Chí Minh</option>
+                                <option value="0">Hà Nội</option>
+                                <option value="0">Kiên Giang</option>
+                                <option value="0">An Giang</option>
+                                <option value="0">Đà Nẵng</option>
+                                <option value="0">Khánh Hoà</option>
+                                <option value="0">Huế</option>
+                                <option value="0">Nghệ An</option>
+                            </select></>
+                        </div>
+                        <div class="adv-title">
+                        <div style="width: 100px; float: left;">Quận/Huyện</div>
+                            
+                            <select id="districtList"  class="adv-dropdownlist">
+                                <option value="0" selected="selected">-- Chọn --</option>
+                                <option value="0">Quận 1</option>
+                                <option value="0">Quận 2</option>
+                                <option value="0">Quận 3</option>
+                                <option value="0">Quận 4</option>
+                                <option value="0">Quận 5</option>
+                                <option value="0">Quận 6</option>
+                                <option value="0">Quận 7</option>
+                                <option value="0">Quận 8</option>
+                                <option value="0">Quận 9</option>
+                                <option value="0">Quận 10</option>
+                                <option value="0">Quận 11</option>
+                                <option value="0">Quận 12</option>
+                                <option value="0">Quận Tân Bình</option>
+                                <option value="0">Quận Phú Nhuận</option>
+                                <option value="0">Quận Gò Gấp</option>
+                                <option value="0">Quận Bình Tân</option>
+                                <option value="0">Quận Tân Phú</option>
+                                <option value="0">Quận Thủ Đức</option>
+                                <option value="0">Huyện Hóc Môn</option>
+                                <option value="0">Huyện Bình Chánh</option>
+                            </select>
+                            </>    
+                        </div>
+                        
+                        <a href="javascript:void(0)" class="buttonSearch">Tìm kiếm</a>
+
+                    </div>
+					<div class="post-cnt">
+						
+					</div>
+					<div class="cl">&nbsp;</div>
+				</section>
+
+			@*	<section class="content">
+					<h2>WHO WE ARE</h2>
+					<p>Maecenas vel est sit amet massa dignissim <span>hendrerit</span> sit amet ac ante. Praesent dapibus neque vel enim adipiscing vel feugiat leo luctus. Nulla semper varius nulla, eu euismod turpis volutpat in. Nullam neque diam, facilisis vitae suscipit eu, gravida ut tortor. Duis faucibus lectus nec metus elementum ac <a href="#">adipiscing</a> lorem consectetur. Nulla dui ipsum, <em>iaculis a mollis vel</em>, sodales a ipsum. Nam tincidunt consequat lacus eget imperdiet. Nullam posuere convallis libero, vitae lobortis libero fermentum eu. Ut id venenatis lectus. <strong>Donec eget</strong> quam et dolor facilisis commodo nullam tempor aliquet vulputate phasellus ac libero sed justo luctus vehicula.<br /> <a href="#" class="more">meet the team</a></p>
+				</section>*@
+
+				<section class="partners">
+					
+					<div id="partners-slider">
+						<div class="slider-holder2">
+						    <img src="~/Content/Images/partners1.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners2.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners3.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners4.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners5.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners6.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners7.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners8.jpg" width="102" height="102" />
+						    <img src="~/Content/Images/partners9.jpg" width="102" height="102" />
+						</div>
+					</div>
+					<div class="slider-arr">
+						<a class="prev-arr arr-btn" href="#"></a>
+						<a class="next-arr arr-btn" href="#"></a>
+					</div>
+				</section>
+
+				<div class="socials">
+					<p>Ghé thăm chúng tôi tại</p>
+
+					<ul>
+						<li><a href="#" class="facebook-ico">facebook-ico</a></li>
+						<li><a href="#" class="twitter-ico">twitter-ico</a></li>
+						<li><a href="#" class="skype-ico">skype-ico</a></li>
+						<li><a href="#" class="rss-ico">rss-ico</a></li>
+					</ul>
+				</div>
