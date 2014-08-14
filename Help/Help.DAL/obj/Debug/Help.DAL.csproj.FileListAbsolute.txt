@@ -10,3 +10,15 @@ D:\Project\Help\HelpSource\Help\Help.DAL\bin\Debug\EntityFramework.SqlServer.xml
 D:\Project\Help\HelpSource\Help\Help.DAL\obj\Debug\Help.DAL.csprojResolveAssemblyReference.cache
 D:\Project\Help\HelpSource\Help\Help.DAL\obj\Debug\Help.DAL.dll
 D:\Project\Help\HelpSource\Help\Help.DAL\obj\Debug\Help.DAL.pdb
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\Help.DAL.dll.config
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\Help.DAL.dll
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\Help.DAL.pdb
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\EntityFramework.dll
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\Help.Model.dll
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\Help.Model.pdb
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\EntityFramework.xml
+D:\Project\HelpSVN\Help\Help.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\HelpSVN\Help\Help.DAL\obj\Debug\Help.DAL.csprojResolveAssemblyReference.cache
+D:\Project\HelpSVN\Help\Help.DAL\obj\Debug\Help.DAL.dll
+D:\Project\HelpSVN\Help\Help.DAL\obj\Debug\Help.DAL.pdb
