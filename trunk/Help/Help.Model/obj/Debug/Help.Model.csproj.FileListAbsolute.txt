@@ -9,3 +9,15 @@ D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.Migrations.Creat
 D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.csproj.GenerateResource.Cache
 D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.dll
 D:\Project\Help\HelpSource\Help\Help.Model\obj\Debug\Help.Model.pdb
+D:\Project\HelpSVN\Help\Help.Model\bin\Debug\Help.Model.dll.config
+D:\Project\HelpSVN\Help\Help.Model\bin\Debug\Help.Model.dll
+D:\Project\HelpSVN\Help\Help.Model\bin\Debug\Help.Model.pdb
+D:\Project\HelpSVN\Help\Help.Model\bin\Debug\EntityFramework.dll
+D:\Project\HelpSVN\Help\Help.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\HelpSVN\Help\Help.Model\bin\Debug\EntityFramework.xml
+D:\Project\HelpSVN\Help\Help.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\HelpSVN\Help\Help.Model\obj\Debug\Help.Model.csprojResolveAssemblyReference.cache
+D:\Project\HelpSVN\Help\Help.Model\obj\Debug\Help.Model.Migrations.CreateLoaiCoSoKhamBenhTable.resources
+D:\Project\HelpSVN\Help\Help.Model\obj\Debug\Help.Model.csproj.GenerateResource.Cache
+D:\Project\HelpSVN\Help\Help.Model\obj\Debug\Help.Model.dll
+D:\Project\HelpSVN\Help\Help.Model\obj\Debug\Help.Model.pdb
