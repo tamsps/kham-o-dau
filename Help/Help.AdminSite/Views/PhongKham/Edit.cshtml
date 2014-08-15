@@ -9,3 +9,62 @@
     Phòng Khám - Sửa
 }
 
+@using (Html.BeginForm())
+{ 
+     @Html.ValidationSummary(false)
+      <div class="box-body">
+        <div class="form-group">
+           @Html.LabelFor(model => model.TenCS)
+             @Html.TextBoxFor(model => model.TenCS, new{@type="text",@class="form-control",@placeholder="Tên cơ sở",@id="txtNameHospital"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaChi)
+            @Html.TextBoxFor(model => model.DiaChi, new{@type="text",@class="form-control",@placeholder="Địa chỉ",@id="txtNameHospitalAddress"})
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model=>model.LoaiCoSo)
+            @Html.DropDownList("LoaiCoSo",(IEnumerable<SelectListItem>)ViewBag.LoaiCoSo,"-- Chọn Loại Cơ Sở --", new {@class="form-control"})
+        </div>
+
+        <div class="form-group">
+            <label>Loại cơ sở khám bệnh</label>
+            @Html.DropDownList("LoaiDieuTri",(IEnumerable<SelectListItem>)ViewBag.LoaiDieuTri,"-- Chọn Loại Điều Trị --", new {@class="form-control"})
+            
+        </div>
+
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.ThongTinChung)
+            @Html.TextAreaFor(model=>model.ThongTinChung, new {@class="textarea"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChuThich)
+            @Html.TextBoxFor(model => model.ChuThich, new{@type="text",@class="form-control",@placeholder="Tên cơ sở",@id="txtNote"})
+        </div>
+
+        <p>
+            <input type="submit" value="Chấp nhận" />
+        </p>
+
+      
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    
+    <script src="~/Scripts/plugins/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Replace the <textarea id="Editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('ThongTinChung');
+            //boOtstrap WYSIHTML5 - text editor
+            //$(".textarea").wysihtml5();
+           
+        });
+    </script>
+}

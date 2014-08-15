@@ -779,6 +779,7 @@
     <Content Include="Content\less\small-box.less" />
     <Content Include="Content\less\timeline.less" />
     <Content Include="Content\less\vars.less" />
+    <None Include="Properties\PublishProfiles\AdminKhamODau.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\ajax-loader.gif" />
     <Content Include="Images\ajax-loader1.gif" />
