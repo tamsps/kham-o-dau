@@ -86,9 +86,52 @@ namespace Help.AdminSite.Controllers
             return View();
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            return View();
+            ViewBag.LoaiCoSo = (IEnumerable<SelectListItem>)_loaiCoSoRepository.GetAll().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Ten });
+            ViewBag.LoaiDieuTri = (IEnumerable<SelectListItem>)_loaiDieuTriRepository.GetAll().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Ten });
+            
+            var phongKhamDetail = _coSoKhamBenhRepository.GetById(id);
+            return View(phongKhamDetail);
+        }
+        [HttpPost, ValidateInput(false)]
+        public ActionResult Edit(CoSoKhamBenh coSoKhamBenh, int LoaiCoSo, int LoaiDieuTri)
+        {
+            try
+            {
+                ViewBag.LoaiCoSo = (IEnumerable<SelectListItem>)_loaiCoSoRepository.GetAll().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Ten });
+                ViewBag.LoaiDieuTri = (IEnumerable<SelectListItem>)_loaiDieuTriRepository.GetAll().Select(b => new SelectListItem { Value = b.Id.ToString(), Text = b.Ten });
+                coSoKhamBenh.LoaiCoSo = LoaiCoSo;
+                coSoKhamBenh.LoaiDieuTri = LoaiDieuTri;
+                coSoKhamBenh.NgayTao = DateTime.Now;
+                coSoKhamBenh.NgayChinhSua = DateTime.Now;
+
+                _coSoKhamBenhRepository.Update(coSoKhamBenh);
+                _coSoKhamBenhRepository.Save();
+            }
+            catch (Exception ex)
+            {
+                Logger.FrameworkLogger.Error("Update Phong Kham error: ", ex);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            try
+            {
+                var cosoKhamBenh = _coSoKhamBenhRepository.GetById(id);
+                if(cosoKhamBenh!=null)
+                {
+                    _coSoKhamBenhRepository.Delete(cosoKhamBenh);
+                    _coSoKhamBenhRepository.Save();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.FrameworkLogger.Error("Delete Phong Kham error: ", ex);
+            }
+            return RedirectToAction("Index");
         }
 
     }
