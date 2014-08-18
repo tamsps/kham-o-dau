@@ -1,109 +1,72 @@
 ﻿@model Help.Model.User
 
 @{
-    ViewBag.Title = "Thêm mới bệnh nhân";
+    ViewBag.Title = "Thêm mới khách hàng";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section header{
-    Bệnh nhân - Thêm mới
+    Khách hàng - Thêm mới
 }
 
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Thông tin bệnh nhân</legend>
+    
+     
+    <div class="box-body">
+        <div class="form-group">
+           @Html.LabelFor(model => model.Ten)
+             @Html.TextBoxFor(model => model.Ten, new{@type="text",@class="form-control",@placeholder="Nguyễn Văn A",@id="txtUsername"})
+        </div>
+        <div class="form-group">
+           @Html.LabelFor(model => model.GioiTinh)
+            @Html.DropDownList("Sex",(IEnumerable<SelectListItem>)ViewBag.Sex,"-- Chọn Giới Tính --", new {@class="form-control"})
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Ten)
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Ten)
-            @Html.ValidationMessageFor(model => model.Ten)
+         <div class="form-group">
+           @Html.LabelFor(model => model.NamSinh)
+             @Html.TextBoxFor(model => model.NamSinh, new{@type="text",@class="form-control",@placeholder="mm/dd/yyyy",@id="txtBirthday"})
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SoDienThoai)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SoDienThoai)
-            @Html.ValidationMessageFor(model => model.SoDienThoai)
+        <div class="form-group">
+           @Html.LabelFor(model => model.Email)
+             @Html.TextBoxFor(model => model.Email, new{@type="text",@class="form-control",@placeholder="tamsps@hotmail.com",@id="txtEmail"})
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DiaChi)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DiaChi)
-            @Html.ValidationMessageFor(model => model.DiaChi)
+        <div class="form-group">
+           @Html.LabelFor(model => model.SoDienThoai)
+             @Html.TextBoxFor(model => model.SoDienThoai, new{@type="text",@class="form-control",@placeholder="08.632154789",@id="txtPhone"})
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NamSinh)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NamSinh)
-            @Html.ValidationMessageFor(model => model.NamSinh)
+         <div class="form-group">
+           @Html.LabelFor(model => model.DiaChi)
+             @Html.TextBoxFor(model => model.DiaChi, new{@type="text",@class="form-control",@placeholder="1 Đồng Khởi, Q.1, TPHCM",@id="txtAddress"})
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.GioiTinh)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.GioiTinh)
-            @Html.ValidationMessageFor(model => model.GioiTinh)
+         <div class="form-group">
+           @Html.LabelFor(model => model.ChieuCao)
+             @Html.TextBoxFor(model => model.ChieuCao, new{@type="text",@class="form-control",@placeholder="160 (Chiều cao tính theo cm)",@id="txtHeight"})
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ChieuCao)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ChieuCao)
-            @Html.ValidationMessageFor(model => model.ChieuCao)
+        <div class="form-group">
+           @Html.LabelFor(model => model.CanNang)
+             @Html.TextBoxFor(model => model.CanNang, new{@type="text",@class="form-control",@placeholder="Cân nặng tính theo kg",@id="txtWeight"})
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CanNang)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CanNang)
-            @Html.ValidationMessageFor(model => model.CanNang)
-        </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.UserGroup)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.UserGroup)
-            @Html.ValidationMessageFor(model => model.UserGroup)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Status)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Status)
-            @Html.ValidationMessageFor(model => model.Status)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
+         <p>
+            <input type="submit" value="Tạo mới" />
         </p>
-    </fieldset>
+
+
+        </div>
+    
+  
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Quay lại danh sách", "Index")
 </div>
 
 @section Scripts {
