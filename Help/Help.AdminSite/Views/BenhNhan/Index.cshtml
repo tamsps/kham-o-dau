@@ -1,88 +1,61 @@
 ﻿@model IEnumerable<Help.Model.User>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Khách Hàng";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Ten)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SoDienThoai)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NamSinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ChieuCao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CanNang)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserGroup)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ten)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoDienThoai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NamSinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GioiTinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChieuCao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CanNang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserGroup)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@section header{
+    Khách Hàng - Danh sách
 }
 
-</table>
+<p>
+    @Html.ActionLink("Tạo Mới", "Create")
+</p>
+
+<div class="box-body table-responsive">
+
+    <table class="tabUser table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th> @Html.DisplayNameFor(model => model.Ten)</th>
+                <th> @Html.DisplayNameFor(model => model.Email)</th>
+                <th> @Html.DisplayNameFor(model => model.SoDienThoai)</th>
+                <th> @Html.DisplayNameFor(model => model.GioiTinh)</th>
+                <th> @Html.DisplayNameFor(model => model.DiaChi)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Ten)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SoDienThoai)</td>
+                    <td>@Html.DisplayFor(modelItem => item.GioiTinh)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                    
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new {id = item.Id}) |
+                       @* @Html.ActionLink("Details", "Details", new {id = item.Id}) |*@
+                        @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                    </td>
+                </tr>
+            }
+            
+        </tbody>
+        
+    </table>
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/plugins/datatables/jquery.dataTables.js"></script>
+    <script src="~/Scripts/plugins/datatables/dataTables.bootstrap.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".tabUser").dataTable();
+        });
+    </script>
+}

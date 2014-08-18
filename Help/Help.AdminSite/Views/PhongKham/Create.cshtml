@@ -38,7 +38,6 @@ Phòng khám - Thêm mới
             
         </div>
 
-        
         <div class="form-group">
             @Html.LabelFor(model => model.ThongTinChung)
             @Html.TextAreaFor(model=>model.ThongTinChung, new {@class="textarea"})
@@ -49,15 +48,13 @@ Phòng khám - Thêm mới
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Tạo mới" />
         </p>
-
-      
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+     @Html.ActionLink("Quay lại danh sách", "Index")
 </div>
 
 @section Scripts {
@@ -70,7 +67,6 @@ Phòng khám - Thêm mới
             CKEDITOR.replace('ThongTinChung');
             //boOtstrap WYSIHTML5 - text editor
             //$(".textarea").wysihtml5();
-           
         });
     </script>
 }
